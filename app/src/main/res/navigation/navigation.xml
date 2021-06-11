@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/navigation"
+    app:startDestination="@id/mainFragment">
+
+    <fragment
+        android:id="@+id/mainFragment"
+        android:name="com.danny.alarmmanager.views.MainFragment"
+        android:label="MainFragment">
+        <action
+            android:id="@+id/action_mainFragment_to_titleFragment"
+            app:destination="@id/titleFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/titleFragment"
+        android:name="com.danny.alarmmanager.views.TitleFragment"
+        android:label="TitleFragment">
+        <action
+            android:id="@+id/action_titleFragment_to_addAlarmFragment"
+            app:destination="@id/addAlarmFragment"
+            app:popUpToInclusive="true" />
+        <argument
+            android:name="title"
+            android:defaultValue=""
+            app:argType="string" />
+        <argument
+            android:name="contents"
+            android:defaultValue=""
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/addAlarmFragment"
+        android:name="com.danny.alarmmanager.views.AddAlarmFragment"
+        android:label="AddAlarmFragment">
+        <argument
+            android:name="title"
+            app:argType="string" />
+        <argument
+            android:name="contents"
+            app:argType="string" />
+    </fragment>
+</navigation>
